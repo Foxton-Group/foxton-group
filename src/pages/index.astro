@@ -1,17 +1,110 @@
 ---
-
+import { Image } from 'astro:assets';
+import MainLayout from '../layouts/MainLayout.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import petrellenImg from '../assets/images/Petrellen Court.jpeg';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Foxton Group | Luxury Residential & Commercial Construction">
+
+  <HeroCarousel />
+
+  <!-- HALLWAY SECTION -->
+  <section class="hallway-section">
+    <div class="hallway-grid">
+      <div class="hallway-image">
+        <Image src={petrellenImg} alt="High quality construction hallway" />
+      </div>
+      <div class="hallway-content">
+        <h2>High quality, reliable commercial<br>&amp; residential construction team</h2>
+        <p>We handle your build from start to finish, including design, planning and project management.</p>
+        <p>Foxton Group is Cornwall’s trusted partner for luxury residential and commercial construction. Based in St Ives, we deliver high-end new builds, heritage restorations and commercial projects from design and planning through to flawless completion.</p>
+        <a href="/projects" class="btn-secondary">FIND OUT MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO (GREEN SECTION) – final centered + balanced version -->
+  <section class="what-we-do">
+    <div class="what-we-do-container">
+      <div class="what-we-do-grid">
+        <!-- LEFT COLUMN -->
+        <div class="what-we-do-left">
+          <h2>What We Do</h2>
+          <p>Our expertise includes commercial contracting, luxury residential and project management.</p>
+          <a href="/projects" class="btn-explore">EXPLORE</a>
+        </div>
+        <!-- RIGHT COLUMN -->
+        <div class="what-we-do-right">
+          <p>Our experienced team covers commercial contracting, luxury residential builds and full project management. What sets Foxton Group apart is our commitment to uncompromising quality delivered to budget and on schedule. Every project includes a complete Quantity Surveyor take-off, giving you fixed-price peace of mind – with zero hidden costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Hallway section (unchanged) */
+    .hallway-section { padding: 6rem 2rem; background: #fff; }
+    .hallway-grid { display: flex; gap: 4rem; align-items: center; max-width: none; width: 100%; margin: 0 auto; }
+    .hallway-image img { width: 100%; height: auto; border-radius: 0.75rem; box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.1); }
+    .hallway-content h2 { font-size: clamp(2.2rem, 4vw, 2.8rem); line-height: 1.2; font-weight: 300; margin-bottom: 1.5rem; }
+    .hallway-content p { font-size: clamp(1.05rem, 1.8vw, 1.15rem); line-height: 1.7; color: #555; margin-bottom: 1.5rem; }
+
+    /* WHAT WE DO – properly centered and balanced */
+    .what-we-do {
+      background: #0f2c1f;
+      color: white;
+      padding: 6rem 2rem;
+    }
+    .what-we-do-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .what-we-do-grid {
+      display: flex;
+      gap: 7rem;
+      align-items: flex-start;
+    }
+    .what-we-do-left {
+      flex: 0 0 400px;           /* fixed narrow width for left column */
+    }
+    .what-we-do-left h2 {
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .what-we-do-left p {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      line-height: 1.4;
+      margin-bottom: 2.5rem;
+    }
+    .what-we-do-right {
+      flex: 1;
+      max-width: 720px;           /* limits paragraph width so it doesn't stretch */
+      font-size: clamp(1.05rem, 1.8vw, 1.15rem);
+      line-height: 1.7;
+    }
+
+    .btn-secondary, .btn-explore {
+      display: inline-block;
+      padding: 1rem 2.75rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary { background: #f5f5f5; color: #222; }
+    .btn-secondary:hover { background: #222; color: #fff; }
+    .btn-explore { background: white; color: #0f2c1f; }
+    .btn-explore:hover { transform: scale(1.05); }
+
+    @media (max-width: 1024px) {
+      .what-we-do-grid { gap: 4rem; }
+      .what-we-do-left { flex: 0 0 100%; }
+    }
+    @media (max-width: 768px) {
+      .hallway-grid, .what-we-do-grid { flex-direction: column; gap: 3rem; }
+    }
+  </style>
+</MainLayout>

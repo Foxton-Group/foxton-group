@@ -1,0 +1,101 @@
+---
+import logoWhite from '../assets/images/glogo.png';
+---
+
+<footer>
+  <div class="footer-container">
+    <!-- Left: Logo + Address -->
+    <div class="footer-left">
+      <img src={logoWhite.src} alt="Foxton Group" class="footer-logo" />
+      <p>Foxton Group Ltd<br>St Ives,<br>Cornwall, TR26 3HW</p>
+    </div>
+
+    <!-- Right: Contact + Socials -->
+    <div class="footer-right">
+      <div class="contact-info">
+        <p><strong>Tel:</strong> +44 (0) 7517 109108</p>
+        <p><strong>Email:</strong> dan@foxton-group.com</p>
+        <p><strong>Vendors:</strong> accounts@foxton-group.com</p>
+      </div>
+
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal strip -->
+  <div class="legal-strip">
+    <p>Please click here for our <a href="/privacy-policy">Privacy Policy</a>.</p>
+    <p>All content © Copyright 2026 Foxton Group Ltd and protected under UK and International law.<br>
+    Duplication, reproduction and/or distribution of any material on this website is strictly prohibited.<br>
+    All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #0f2c1f;
+    color: white;
+    padding: 4rem 2rem 2rem;
+  }
+  .footer-container {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .footer-left .footer-logo {
+    width: 550px;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+  .footer-left p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .contact-info p {
+    margin: 0.25rem 0;
+    font-size: 1.05rem;
+  }
+  .social-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .social-links a {
+    color: white;
+    font-size: 1.35rem;
+    text-decoration: none;
+  }
+  .social-links a:hover {
+    color: #f59e0b;
+  }
+
+  .legal-strip {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+  .legal-strip a {
+    color: #f59e0b;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container { flex-direction: column; text-align: center; }
+  }
+</style>

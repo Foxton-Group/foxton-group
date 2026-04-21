@@ -1,0 +1,27 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '/src/assets/fonts/raleway.css';
+const { title = 'Foxton Group', showFooter = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foxton Group</title>
+</head>
+<body class="flex flex-col min-h-screen bg-[#F5F4F0] w-full max-w-none mx-0 px-0">
+
+  <Header />
+
+ <main class="flex-1 w-full max-w-none mx-0 px-0"></main>
+    <slot />
+  </main>
+
+{showFooter && <Footer />}
+
+</body>
+</html>

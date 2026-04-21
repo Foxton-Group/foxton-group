@@ -1,0 +1,126 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// Explicit imports (this is the reliable way)
+import heroImg from '../../assets/images/RESTEST.jpeg';
+import diningImg from '../../assets/images/Peel Street Dining.jpeg';
+import hallImg from '../../assets/images/Peel Street Hall.jpeg';
+import bathroomImg from '../../assets/images/Peel Street Main Bathroom.jpeg';
+import masterImg from '../../assets/images/Peel Street Master.jpeg';
+import loungeImg from '../../assets/images/Peel Street Lounge to Garden.jpeg';
+---
+
+<MainLayout title="High-End Residential | Foxton Group">
+
+  <!-- Hero -->
+  <div class="project-hero">
+    <img src={heroImg.src} alt="High-End Residential" class="hero-image" />
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1>High-End Residential</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-content">
+    <div class="description">
+      <p>Foxton Group delivers luxury new builds, refurbishments and bespoke homes for discerning clients across Cornwall. From groundworks through to high-end bespoke joinery, every project is completed to the highest standard with uncompromising quality and attention to detail.</p>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery">
+      <h2>Project Examples</h2>
+      <div class="image-grid">
+        <img src={diningImg.src} alt="Peel Street Dining" loading="lazy" />
+        <img src={hallImg.src} alt="Peel Street Hall" loading="lazy" />
+        <img src={bathroomImg.src} alt="Peel Street Main Bathroom" loading="lazy" />
+        <img src={masterImg.src} alt="Peel Street Master Bedroom" loading="lazy" />
+        <img src={loungeImg.src} alt="Peel Street Lounge to Garden" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <div class="back-button">
+      <a href="/projects" class="btn-secondary">← Back to Projects</a>
+    </div>
+  </div>
+
+  <style>
+    .project-hero {
+      position: relative;
+      height: 75vh;
+      overflow: hidden;
+    }
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      padding: 3rem 2rem 2rem;
+      color: white;
+    }
+    .hero-text h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .project-content {
+      max-width: 1380px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .description {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      max-width: 800px;
+      margin-bottom: 4rem;
+      color: #333;
+    }
+
+    .gallery h2 {
+      margin-bottom: 2rem;
+      font-size: 2.25rem;
+      color: #0A3D2F;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1.5rem;
+    }
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .image-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    .back-button {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: #f5f5f5;
+      color: #222;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .btn-secondary:hover {
+      background: #222;
+      color: white;
+    }
+  </style>
+</MainLayout>

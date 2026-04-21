@@ -1,0 +1,116 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import WorkCategory from '../components/WorkCategory.astro';
+---
+
+<MainLayout>
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <h1>Our Work</h1>
+    <p class="quote">
+      'Apparently, stealing pics is commonplace these days,<br>
+      don't worry everything you see here is our work.'
+    </p>
+  </div>
+
+  <!-- TWO-COLUMN LAYOUT – tighter side padding -->
+  <div class="categories-wrapper">
+    <div class="column">
+      <WorkCategory title="CARPENTRY" description="Precision first and second-fix carpentry for luxury new builds, refurbishments and alterations in Cornwall. We deliver exceptional craftsmanship at speed with a flawless premium finish trusted by main contractors and high-end clients." images={["/images/IMG_2161.jpeg","/images/IMG_2165.jpeg","/images/IMG_2167.jpeg","/images/IMG_2171.jpeg","/images/IMG_2161.jpeg","/images/IMG_2165.jpeg"]} />
+      <WorkCategory title="HERITAGE" description="Specialists in listed building renovations, heritage restorations, sympathetic extensions and alterations across Cornwall. Foxton Group delivers high-quality, sensitive work on time and to the highest standard for architects and luxury housing developers." images={["/images/IMG_2161.jpeg","/images/IMG_2165.jpeg","/images/IMG_2167.jpeg","/images/IMG_2171.jpeg","/images/IMG_2161.jpeg","/images/IMG_2165.jpeg"]} />
+      <WorkCategory title="GROUNDWORKS" description="Expert groundworks for high-end new builds, refurbishments and alterations across Cornwall. Foxton Group delivers precise, stable foundations on budget and ahead of schedule giving luxury developers and architects complete confidence in every project." images={["/images/IMG_2161.jpeg","/images/IMG_2165.jpeg","/images/IMG_2167.jpeg","/images/IMG_2171.jpeg","/images/IMG_2161.jpeg","/images/IMG_2165.jpeg"]} />
+    </div>
+
+    <div class="column">
+      <WorkCategory title="JOINERY" description="Bespoke joinery, staircases and cabinetry for luxury new builds, refurbishments and alterations across the South West. We deliver outstanding detail and finish, without compromising on deadlines and budget. Ideal for architects and clients seeking a polished high-end result." images={["/images/IMG_2161.jpeg","/images/IMG_2165.jpeg","/images/IMG_2167.jpeg","/images/IMG_2171.jpeg","/images/IMG_2161.jpeg","/images/IMG_2165.jpeg"]} />
+      <WorkCategory title="COMMERCIAL" description="Professional commercial construction, refurbishments and fit-outs for retail and hospitality across the South West. Foxton Group delivers high-quality results on time and within budget trusted by main contractors and developers for premium spaces." images={["/images/IMG_2161.jpeg","/images/IMG_2165.jpeg","/images/IMG_2167.jpeg","/images/IMG_2171.jpeg","/images/IMG_2161.jpeg","/images/IMG_2165.jpeg"]} />
+      <WorkCategory title="STRUCTURAL" description="Reliable structural contracting for high-end new builds, refurbishments, extensions and alterations in Cornwall. We ensure strength, speed and premium quality with steelwork and reinforcements for main contractors and developers." images={["/images/IMG_2161.jpeg","/images/IMG_2165.jpeg","/images/IMG_2167.jpeg","/images/IMG_2171.jpeg","/images/IMG_2161.jpeg","/images/IMG_2165.jpeg"]} />
+    </div>
+  </div>
+
+  <!-- Lightbox (untouched) -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button id="close-btn" class="close-btn">×</button>
+      <img id="lightbox-image" alt="">
+    </div>
+  </div>
+
+  <style>
+    .hero {
+      text-align: center;
+      padding: 2rem 0 2.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.75rem, 5vw, 3.625rem);
+      line-height: 1.1;
+      font-weight: 600;
+      color: #0A3D2F;
+      margin-bottom: 1.25rem;
+    }
+    .quote {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      font-style: italic;
+      max-width: 51.25rem;
+      margin: 0 auto;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    .categories-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: none;
+      margin: 0 auto;
+      padding: 0 1.25rem;           /* ← tighter overall left/right padding */
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .lightbox-content { position: relative; max-height: 90vh; max-width: 90vw; }
+    .close-btn {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: none; border: none; color: white; font-size: 3rem;
+      cursor: pointer; line-height: 1; z-index: 10000;
+    }
+    #lightbox-image { max-height: 90vh; max-width: 90vw; object-fit: contain; }
+
+    @media (max-width: 1024px) {
+      .categories-wrapper { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+    }
+  </style>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeBtn = document.getElementById('close-btn');
+
+    function openLightbox(idx) {
+      const imgs = ["/images/IMG_2161.jpeg","/images/IMG_2165.jpeg","/images/IMG_2167.jpeg","/images/IMG_2171.jpeg","/images/IMG_2161.jpeg","/images/IMG_2165.jpeg"];
+      lightboxImage.src = imgs[idx];
+      lightbox.style.display = 'flex';
+    }
+    function closeLightbox() { lightbox.style.display = 'none'; }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img[data-idx]').forEach(img => {
+        img.addEventListener('click', () => {
+          const idx = parseInt(img.getAttribute('data-idx'));
+          openLightbox(idx);
+        });
+      });
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    });
+  </script>
+</MainLayout>

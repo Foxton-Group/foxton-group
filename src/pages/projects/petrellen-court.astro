@@ -1,0 +1,157 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// Explicit imports
+import heroImg from '../../assets/images/SlugH1.jpeg';
+
+import slug2 from '../../assets/images/SlugH2.jpeg';
+import slug3 from '../../assets/images/SlugH3.jpeg';
+import slug4 from '../../assets/images/SlugH4.jpeg';
+import slug5 from '../../assets/images/SlugH5.jpeg';
+import slug6 from '../../assets/images/SlugH6.jpeg';
+import slug7 from '../../assets/images/SlugH7.jpeg';
+import slug8 from '../../assets/images/SlugH8.jpeg';
+import slug9 from '../../assets/images/SlugH9.jpeg';
+import slug10 from '../../assets/images/SlugH10.jpeg';
+import slug11 from '../../assets/images/SlugH11.jpeg';
+import slug12 from '../../assets/images/SlugH12.jpeg';
+import slug13 from '../../assets/images/SlugH13.jpeg';
+import slug14 from '../../assets/images/SlugH14.jpeg';
+import slug15 from '../../assets/images/SlugH15.jpeg';
+import slug16 from '../../assets/images/SlugH16.jpeg';
+import slug17 from '../../assets/images/SlugH17.jpeg';
+
+const galleryImages = [slug2, slug3, slug4, slug5, slug6, slug7, slug8, slug9, slug10, slug11, slug12, slug13, slug14, slug15, slug16, slug17];
+---
+
+<MainLayout title="Petrellen Court | Foxton Group">
+
+  <!-- Hero - now using SlugH1 -->
+  <div class="project-hero">
+    <img src={heroImg.src} alt="Petrellen Court" class="hero-image" />
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1>Petrellen Court</h1>
+        <p class="location">Rosudgeon, Cornwall, UK • 2020–Present</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-content">
+    <div class="description">
+      <p>Foxton Group partnered with Selleck Nicholls Homes to rejuvenate this stunning Grade II listed development by restoring the historic features. The complete heritage restoration, sympathetic extensions and alterations across the property, with new build two bedroomed townhouse with garage. The build showcases exceptional craftsmanship and sympathetic restoration throughout.</p>
+    </div>
+
+    <!-- Gallery (starts from image 2) -->
+    <div class="gallery">
+      <h2>Project Gallery</h2>
+      <div class="image-grid">
+        {galleryImages.map((img, i) => (
+          <div class="gallery-item" key={i}>
+            <img 
+              src={img.src} 
+              alt={`Petrellen Court - ${i + 2}`} 
+              loading="lazy"
+            />
+            <div class="caption">Image {i + 2}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <div class="back-button">
+      <a href="/projects" class="btn-secondary">← Back to Projects</a>
+    </div>
+  </div>
+
+  <style>
+    .project-hero {
+      position: relative;
+      height: 75vh;
+      overflow: hidden;
+    }
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      padding: 3rem 2rem 2rem;
+      color: white;
+    }
+    .hero-text h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    .location {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .project-content {
+      max-width: 1380px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .description {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      max-width: 800px;
+      margin-bottom: 4rem;
+      color: #333;
+    }
+
+    .gallery h2 {
+      margin-bottom: 2rem;
+      font-size: 2.25rem;
+      color: #0A3D2F;
+    }
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+    .caption {
+      margin-top: 0.75rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .back-button {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: #f5f5f5;
+      color: #222;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .btn-secondary:hover {
+      background: #222;
+      color: white;
+    }
+  </style>
+</MainLayout>

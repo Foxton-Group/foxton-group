@@ -1,0 +1,144 @@
+---
+import { Image } from 'astro:assets';
+import MainLayout from '../layouts/MainLayout.astro';
+import PortfolioCard from '../components/PortfolioCard.astro';
+
+import listedImg from '../assets/images/Petrellen Court.jpeg';
+import residentialImg from '../assets/images/Peel Street Dining.jpeg';
+import commercialImg from '../assets/images/Summerset.jpeg';
+---
+
+<MainLayout>
+<!-- ==================== OUR PORTFOLIO ==================== -->
+<section class="portfolio">
+  <div class="container">
+    <h2>Our Portfolio</h2>
+    <p class="subtitle">Featured projects across our core specialisms</p>
+
+    <!-- ←←← THIS WRAPPER MAKES THE 3-COLUMN GRID WORK →→→ -->
+    <div class="portfolio-grid">
+      <PortfolioCard
+        image={listedImg}
+        title="Listed Building Specialists"
+        description="Heritage restorations, sympathetic extensions and alterations across Cornwall."
+        link="/projects/petrellen-court"
+      />
+      <PortfolioCard
+        image={residentialImg}
+        title="High-End Residential"
+        description="Luxury new builds, refurbishments and bespoke homes for discerning clients."
+        link="/projects/residential"
+      />
+      <PortfolioCard
+        image={commercialImg}
+        title="Commercial, Retail & Hospitality"
+        description="Commercial fit-outs, restaurants, hotels and high-end retail spaces."
+        link="/projects/commercial"
+      />
+    </div>
+  </div>
+</section>
+
+  <!-- ==================== WHAT OUR CLIENTS SAY ==================== -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <img src="/src/assets/images/client-renovo.png" alt="Renovo" class="client-logo">
+          <p>“Foxton Group’s ability to deliver fast-track luxury residential construction without ever cutting corners is impressive...”</p>
+          <strong>Shaun O’Mara, Renovo Builds</strong>
+        </div>
+        <div class="testimonial-card">
+          <img src="/src/assets/images/client-selleck.png" alt="Selleck Nicholls" class="client-logo">
+          <p>“Working with the Foxton team on our recent development in Penzance was seamless from start to finish...”</p>
+          <strong>David Selleck - Selleck Nicholls</strong>
+        </div>
+        <div class="testimonial-card">
+          <img src="/src/assets/images/client-sara.png" alt="Main Contractor" class="client-logo">
+          <p>“Foxton Group delivered outstanding quality on budget and faster than expected...”</p>
+          <strong>Sara Wright - Main Contractor</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <style>
+/* ===================== PORTFOLIO SECTION ===================== */
+.portfolio {
+  padding: 5rem 0;
+  background: #fff;
+}
+.portfolio h2,
+.subtitle {
+  text-align: center;
+}
+.portfolio h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* Wide cards on 24" screens */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 2.5rem;
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===================== TESTIMONIALS SECTION ===================== */
+.testimonials {
+  background: #f8f8f8;
+  padding: 5rem 0;
+}
+.testimonials h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 3rem;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+.testimonial-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.3125rem 1.25rem rgba(0,0,0,0.06);
+}
+.client-logo {
+  height: 3.75rem;
+  margin-bottom: 1.5rem;
+}
+.testimonial-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 2rem;
+}
+.testimonial-card strong {
+  display: block;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Full-width helper */
+.container {
+  max-width: none;
+  width: 100%;
+  padding: 0 2rem;
+}
+</style>
