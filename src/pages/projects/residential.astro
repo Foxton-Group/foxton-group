@@ -1,20 +1,19 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 
-// Explicit imports (this is the reliable way)
-import heroImg from '../../assets/images/RESTEST.jpeg';
-import diningImg from '../../assets/images/Peel Street Dining.jpeg';
-import hallImg from '../../assets/images/Peel Street Hall.jpeg';
-import bathroomImg from '../../assets/images/Peel Street Main Bathroom.jpeg';
-import masterImg from '../../assets/images/Peel Street Master.jpeg';
-import loungeImg from '../../assets/images/Peel Street Lounge to Garden.jpeg';
+// Explicit imports (this is the reliable way);
+import diningImg from '../assets/images/Peel Street/Peel Street Dining.jpeg';
+import hallImg from '../assets/images/Peel Street/Peel Street Hall.jpeg';
+import bathroomImg from '../assets/images/Peel Street/Peel Street Main Bathroom.jpeg';
+import masterImg from '../assets/images/Peel Street/Peel Street Master.jpeg';
+import loungeImg from '../assets/images/Peel Street/Peel Street Lounge to Garden.jpeg';
 ---
 
 <MainLayout title="High-End Residential | Foxton Group">
 
   <!-- Hero -->
   <div class="project-hero">
-    <img src={heroImg.src} alt="High-End Residential" class="hero-image" />
+    <img src={diningImg.src} alt="High-End Residential" class="hero-image" />
     <div class="hero-overlay">
       <div class="hero-text">
         <h1>High-End Residential</h1>
