@@ -7,11 +7,21 @@ const { title = 'Foxton Group', showFooter = true } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Enhanced viewport for Safari (Chrome ignores extra params) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
   <title>Foxton Group</title>
+
+  <!-- Safari-only text-size fix (100% harmless in Chrome) -->
+  <style>
+    @supports (-webkit-appearance: none) {
+      html {
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
+      }
+    }
+  </style>
 </head>
 <body class="flex flex-col min-h-screen bg-[#F5F4F0] w-full max-w-none mx-0 px-0">
 
