@@ -1,0 +1,201 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import HeritageCarousel from '../components/HeritageCarousel.astro';
+
+// Mission 1 images - 1.ceiling folder (HC1.1 first, then 1-4)
+import img1_5 from '../assets/images/heritage-carousel/1.ceiling/HC1.1.jpeg';
+import img1_1 from '../assets/images/heritage-carousel/1.ceiling/HC1.2.jpeg';
+import img1_2 from '../assets/images/heritage-carousel/1.ceiling/HC1.3.jpeg';
+import img1_3 from '../assets/images/heritage-carousel/1.ceiling/HC1.4.jpeg';
+import img1_4 from '../assets/images/heritage-carousel/1.ceiling/HC1.5.jpeg';
+
+const mission1Images = [img1_5, img1_1, img1_2, img1_3, img1_4];
+
+// Mission 2 - 2.relocate-stairs folder
+import img2_5 from '../assets/images/heritage-carousel/2.relocate-stairs/HC2.1.jpeg';
+import img2_1 from '../assets/images/heritage-carousel/2.relocate-stairs/HC2.2.jpeg';
+import img2_2 from '../assets/images/heritage-carousel/2.relocate-stairs/HC2.3.jpeg';
+import img2_3 from '../assets/images/heritage-carousel/2.relocate-stairs/HC2.4.jpeg';
+import img2_4 from '../assets/images/heritage-carousel/2.relocate-stairs/HC2.5.jpeg';
+
+const mission2Images = [img2_5, img2_1, img2_2, img2_3, img2_4];
+
+// Mission 3 - 3.dry rot folder
+import img3_5 from '../assets/images/heritage-carousel/3.dry rot/HC3.1.jpeg';
+import img3_1 from '../assets/images/heritage-carousel/3.dry rot/HC3.2.jpeg';
+import img3_2 from '../assets/images/heritage-carousel/3.dry rot/HC3.3.jpeg';
+import img3_3 from '../assets/images/heritage-carousel/3.dry rot/HC3.4.jpeg';
+import img3_4 from '../assets/images/heritage-carousel/3.dry rot/HC3.5.jpeg';
+
+const mission3Images = [img3_5, img3_1, img3_2, img3_3, img3_4];
+
+// Mission 4 - 4.front-door folder
+import img4_5 from '../assets/images/heritage-carousel/4.front-door/HC4.1.jpeg';
+import img4_1 from '../assets/images/heritage-carousel/4.front-door/HC4.2.jpeg';
+import img4_2 from '../assets/images/heritage-carousel/4.front-door/HC4.3.jpeg';
+import img4_3 from '../assets/images/heritage-carousel/4.front-door/HC4.4.jpeg';
+import img4_4 from '../assets/images/heritage-carousel/4.front-door/HC4.5.jpeg';
+
+const mission4Images = [img4_5, img4_1, img4_2, img4_3, img4_4];
+
+// Mission 5 - 5.restore portico folder
+import img5_5 from '../assets/images/heritage-carousel/5.restore portico/HC5.1.jpeg';
+import img5_1 from '../assets/images/heritage-carousel/5.restore portico/HC5.2.jpeg';
+import img5_2 from '../assets/images/heritage-carousel/5.restore portico/HC5.3.jpeg';
+import img5_3 from '../assets/images/heritage-carousel/5.restore portico/HC5.4.jpeg';
+import img5_4 from '../assets/images/heritage-carousel/5.restore portico/HC5.5.jpeg';
+
+const mission5Images = [img5_5, img5_1, img5_2, img5_3, img5_4];
+
+// Mission 6 - 6.replicate portico folder
+import img6_5 from '../assets/images/heritage-carousel/6.replicate portico/HC6.1.jpeg';
+import img6_1 from '../assets/images/heritage-carousel/6.replicate portico/HC6.2.jpeg';
+import img6_2 from '../assets/images/heritage-carousel/6.replicate portico/HC6.3.jpeg';
+import img6_3 from '../assets/images/heritage-carousel/6.replicate portico/HC6.4.jpeg';
+import img6_4 from '../assets/images/heritage-carousel/6.replicate portico/HC6.5.jpeg';
+
+const mission6Images = [img6_5, img6_1, img6_2, img6_3, img6_4];
+
+// Mission 7 - 7.veranda folder
+import img7_5 from '../assets/images/heritage-carousel/7.veranda/HC7.1.jpeg';
+import img7_1 from '../assets/images/heritage-carousel/7.veranda/HC7.2.jpeg';
+import img7_2 from '../assets/images/heritage-carousel/7.veranda/HC7.3.jpeg';
+import img7_3 from '../assets/images/heritage-carousel/7.veranda/HC7.4.jpeg';
+import img7_4 from '../assets/images/heritage-carousel/7.veranda/HC7.5.jpeg';
+
+const mission7Images = [img7_5, img7_1, img7_2, img7_3, img7_4];
+
+// Mission 8 - 8.details folder
+import img8_5 from '../assets/images/heritage-carousel/8.details/HC8.1.jpeg';
+import img8_1 from '../assets/images/heritage-carousel/8.details/HC8.2.jpeg';
+import img8_2 from '../assets/images/heritage-carousel/8.details/HC8.3.jpeg';
+import img8_3 from '../assets/images/heritage-carousel/8.details/HC8.4.jpeg';
+import img8_4 from '../assets/images/heritage-carousel/8.details/HC8.5.jpeg';
+
+const mission8Images = [img8_5, img8_1, img8_2, img8_3, img8_4];
+---
+
+<MainLayout title="Heritage | Foxton Group">
+  <main class="bg-white">
+    <!-- Page Header -->
+    <div class="pt-24 pb-16 bg-neutral-50 border-b">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h1 class="text-5xl lg:text-6xl font-light tracking-tight text-neutral-900 text-center">Heritage</h1>
+      </div>
+    </div>
+
+    <!-- MISSION 1 - Petrellen Court, Penzance -->
+    <section class="mission-section">
+      <h2 class="mission-title">Petrellen Court, Penzance</h2>
+      <p class="mission-subtitle">MISSION: SAVE THE FEATURE CEILING & REMAINING STRUCTURE</p>
+      <p class="mission-subtitle">STATUS: CRITICAL</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>A 200-year-old Grade II listed building had fallen into catastrophic disrepair. Over 200 tonnes of masonry had collapsed, exposing that the structure was riddled with dry rot and it was held together only by extensive scaffolding and temporary supports. Structural engineers warned that lifting the entire roof and ornate period ceiling by 3 inches (7.5 cm) was impossible without hydraulics and risked total collapse. Foxton Group successfully executed the complex lift, structural underpinning and sympathetic restoration, meticulously preserving every historic feature with precision onsite joinery and unrivalled craftsmanship.</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission1Images} />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION 2 - Relocate Stairs -->
+    <section class="mission-section">
+      <h2 class="mission-title">MISSION: RELOCATE, RESTORE AND ADAPT THE FEATURE STAIRCASE TO THE NEW LAYOUT </h2>
+      <p class="mission-subtitle">STATUS: HIGH</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>The former grand enterance staircase had to be carefully dismantled from its original location to accommodate the new luxury apartment layout. Foxton Group fully restored every element, modified the staircase to suit the revised first-floor height, and created a bespoke apron and fretwork extension together with a new matching handrail. A new cupboard door was also fabricated with authentic period mouldings perfectly suited to its new position, ensuring the historic staircase remains a centrepiece of the sympathetic conversion.</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission2Images} />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION 3 - Restore Existing & Replicate on Plot 6 -->
+    <section class="mission-section">
+      <h2 class="mission-title">MISSION: ERADICATE SEVERE DRY ROT AND STABILISE THE ENTIRE STRUCTURE </h2>
+      <p class="mission-subtitle">STATUS: CRITICAL</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>Dry rot had become a devastating problem, extensively compromising the structural timber, floors and joinery throughout the severely neglected former hotel. This aggressive fungal decay can rapidly destroy historic fabric and had spread widely after decades of disrepair. Drawing on our substantial experience in dry rot eradication and the safe remediation of similar structural issues such as asbestos, Foxton Group carried out a thorough survey, complete eradication programme, targeted timber replacement and long-term preventative treatment while preserving as much original material as possible. (Full details available in our comprehensive remediation report.)</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission3Images} />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION 4 - Front Door (10 Downing Street Style) -->
+    <section class="mission-section">
+      <h2 class="mission-title">MISSION: FULLY RESTORE THE ORIGINAL FRONT DOOR TO ICONIC SPECIFICATION  </h2>
+      <p class="mission-subtitle">STATUS: HIGH</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>Decades of neglect had left the original front door of the 200-year-old Grade II listed building badly deteriorated, weathered, and no longer fit for purpose. As part of the sensitive conversion to luxury apartments, Foxton Group’s master joiners carefully stripped the entire door, split it apart, strengthened the structure, and expertly recreated all missing beading and mouldings to produce an exact replica of the world-famous iconic black front door of 10 Downing Street.</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission4Images} />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION 5 - restore portico -->
+    <section class="mission-section">
+      <h2 class="mission-title">MISSION: RESTORE THE ORIGINAL FRONT PORTICO TO ITS FORMER GLORY</h2>
+      <p class="mission-subtitle">STATUS: HIGH</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>The original grand portico had suffered significant decay from decades of exposure to the prevailing wind and sea air. Critical framework and detailed mouldings had rotted away. Foxton Group sensitively restored all surviving historic elements, replaced the rotten timber framework, and meticulously recreated the intricate mouldings on the posts to exactly match the original design seen in historic photographs, reinstating the building’s classical entrance with authenticity and precision.</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission5Images} />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION 6 -->
+    <section class="replica portico">
+      <h2 class="mission-title">MISSION: FABRICATE AND INSTALL AN EXACT REPLICA PORTICO FOR THE NEW ENTRANCE</h2>
+      <p class="mission-subtitle">STATUS: MEDIUM</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>To serve the new ground-floor luxury apartment entrance on the opposite side of the plot, an exact replica of the original portico was required. Every component — including the posts — was fabricated and machined onsite by our expert joiners using a combination of traditional craftsmanship and modern techniques, including epoxy lamination for superior stability and longevity. The result is a flawless architectural match that maintains the building’s historic character across the entire facade..</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission6Images} />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION 7 -->
+    <section class="veranda">
+      <h2 class="mission-title">MISSION: CREATE A PERIOD-SYMPATHETIC VERANDA TO UNIFY THE BUILDING</h2>
+         <p class="mission-subtitle">STATUS: MEDIUM</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>Working to the architect’s vision, a new veranda was designed and constructed as a sensitive addition that respects the original aesthetic of the Georgian era. Carefully detailed to reflect the proportions, materials and architectural language of the period, the veranda successfully brings the restored historic elements together with the new luxury apartment layout, enhancing the building’s elegant presence while remaining true to its heritage.</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission7Images} />
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION 8 -->
+    <section class="details-finshing">
+     <h2 class="mission-title">MISSION: RESTORE AND REPLICATE ALL FINE PERIOD DETAILS</h2>
+              <p class="mission-subtitle">STATUS: MEDIUM</p>
+      <div class="two-column">
+        <div class="text-column">
+          <p>The success of the entire project rested on the meticulous restoration of the finer architectural details that define the building’s historic character. Inset rendered pillars, continuous soffit and under-mouldings, restored arches, shutters and windows were all carefully refurbished or faithfully recreated. These sympathetic interventions ensure the Grade II listed building remains authentic to its original design while delivering a flawless, cohesive finish throughout the sympathetic conversion to premium residential use.</p>
+        </div>
+        <div class="full-bleed">
+          <HeritageCarousel images={mission8Images} />
+        </div>
+      </div>
+    </section>
+
+</main>
+</MainLayout>

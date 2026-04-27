@@ -1,0 +1,72 @@
+---
+interface Props {
+  categoryImages: Record<string, string[]>;
+}
+
+const { categoryImages } = Astro.props;
+---
+
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <button id="close-btn" class="close-btn">×</button>
+    <button id="prev-btn" class="nav-btn prev-btn">‹</button>
+    <img id="lightbox-image" alt="">
+    <button id="next-btn" class="nav-btn next-btn">›</button>
+  </div>
+</div>
+
+<style>
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; z-index: 9999; }
+.lightbox-content { position: relative; max-height: 90vh; max-width: 90vw; }
+.close-btn { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; color: white; font-size: 3rem; cursor: pointer; z-index: 10000; line-height: 1; }
+.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); color: #1a1a1a; width: 52px; height: 52px; border: none; border-radius: 50%; font-size: 2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10000; }
+.prev-btn { left: 1.5rem; }
+.next-btn { right: 1.5rem; }
+#lightbox-image { max-height: 90vh; max-width: 90vw; object-fit: contain; }
+</style>
+
+<script define:vars={{ categoryImages }}>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeBtn = document.getElementById('close-btn');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  let currentImages = [];
+  let currentIdx = 0;
+
+  window.openLightbox = (cat, idx) => {
+    console.log('🔥 openLightbox called with category:', cat, 'idx:', idx);
+    console.log('Images for this category:', categoryImages[cat]);
+
+    if (!categoryImages[cat]) {
+      console.error('No images found for category:', cat);
+      return;
+    }
+
+    currentImages = categoryImages[cat];
+    currentIdx = idx;
+    lightboxImage.src = currentImages[currentIdx];
+    lightbox.style.display = 'flex';
+  };
+
+  function closeLightbox() { lightbox.style.display = 'none'; }
+  function goToPrev() {
+    currentIdx = (currentIdx - 1 + currentImages.length) % currentImages.length;
+    lightboxImage.src = currentImages[currentIdx];
+  }
+  function goToNext() {
+    currentIdx = (currentIdx + 1) % currentImages.length;
+    lightboxImage.src = currentImages[currentIdx];
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  });
+</script>

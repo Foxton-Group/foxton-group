@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  carouselId: string;
+  images: any[];
+}
+
+const { carouselId, images = [] } = Astro.props;
+---
+
+<section class="heritage-carousel" data-carousel-id={carouselId}>
+  <div class="carousel-wrapper">
+    <div class="carousel-inner" id={carouselId}>
+      {images.map((img, i) => (
+        <div class="slide" key={i}>
+          <Image src={img} alt="" class="hero-image" loading="eager" />
+        </div>
+      ))}
+    </div>
+    <button id={carouselId + '-prev'} class="carousel-btn prev-btn" aria-label="Previous slide">‹</button>
+    <button id={carouselId + '-next'} class="carousel-btn next-btn" aria-label="Next slide">›</button>
+  </div>
+</section>
+
+<style>
+.heritage-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 480px;
+  overflow: hidden;
+}
+.carousel-wrapper { position: relative; width: 100%; height: 100%; }
+.carousel-inner {
+  display: flex;
+  height: 100%;
+  width: 500%;
+  transition: transform 1000ms cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform;
+}
+.slide { flex: 0 0 100%; width: 100%; height: 100%; position: relative; overflow: hidden; }
+.hero-image {
+  width: calc(100% / 5) !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.95);
+  color: #1a1a1a;
+  width: 62px;
+  height: 62px;
+  border: none;
+  border-radius: 50%;
+  font-size: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.prev-btn { left: 2rem; }
+.next-btn { right: 2rem; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.heritage-carousel');
+  carousels.forEach(carousel => {
+    const inner = carousel.querySelector('.carousel-inner');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+    if (!inner || !prevBtn || !nextBtn) return;
+
+    let current = 0;
+    const total = 5;
+
+    function goToSlide(n) {
+      current = (n + total) % total;
+      inner.style.transform = `translateX(-${current * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(current - 1));
+    nextBtn.addEventListener('click', () => goToSlide(current + 1));
+  });
+});
+</script>
