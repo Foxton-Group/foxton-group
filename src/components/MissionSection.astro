@@ -1,0 +1,154 @@
+---
+import HeritageCarousel from './HeritageCarousel.astro';
+
+interface Props {
+  carouselId: string;
+  images: any[];
+  title: string;
+  subtitle: string;
+  description: string;
+  pdfUrl?: string;
+  reverse?: true;        // set to true to swap carousel ↔ text
+}
+
+const { carouselId, images, title, subtitle, description, pdfUrl, reverse = false } = Astro.props;
+---
+
+<div class={`mission-grid ${reverse ? 'mission-grid--reverse' : ''}`}>
+  <!-- Carousel side -->
+  <div class="main-image-container">
+    <HeritageCarousel images={images} carouselId={carouselId} />
+  </div>
+
+  <!-- Text side -->
+  <div class="text-content">
+    <h3>{title}</h3>
+    <p class="mission-subtitle">{subtitle}</p>
+    <p>{description}</p>
+
+    {pdfUrl && (
+      <div class="remediation-plan mt-8 text-center">
+        <a 
+          href={pdfUrl}
+          target="_blank"
+          class="inline-flex items-center gap-x-3 bg-[#0A3D2F] hover:bg-[#0A3D2F]/90 text-white font-medium text-lg px-8 py-4 rounded-2xl transition-colors shadow-sm"
+        >
+          📄 See our full dry rot remediation plan here
+        </a>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+.mission-grid {
+  display: grid;
+  grid-template-columns: 33.6vw 13vw 1fr;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  align-items: start;
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: -15vw !important;
+  margin-right: 0 !important;
+  padding: 0 2rem !important;
+}
+
+/* ──────── REVERSE GRID (completely independent) ──────── */
+.mission-grid--reverse {
+  display: grid;
+  grid-template-columns: 1fr 13vw 33.6vw;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  align-items: start;
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 15vw !important;
+  margin-right: 0 !important;
+  padding: 0 0rem !important;
+}
+
+/* Children — explicit for BOTH layouts */
+.main-image-container {
+  grid-column: 1;
+  align-self: start;
+}
+
+.mission-grid--reverse .main-image-container {
+  grid-column: 3;
+  align-self: start;
+}
+
+.text-content {
+  grid-column: 3;
+  padding-top: 2rem;
+  padding-left: 0;
+  padding-right: 2rem;
+  margin-right: -15vw;
+  align-self: stretch;
+}
+
+.mission-grid--reverse .text-content {
+  grid-column: 1;
+  padding-top: 2rem;
+  padding-left: 0rem;
+  padding-right: 15vw;
+  margin-left: -20vw;
+  align-self: stretch;
+}
+
+/* Text styling (same for both) */
+.text-content h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #0A3D2F;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.mission-grid--reverse .text-content h3 {
+  text-align: left;
+}
+
+.mission-subtitle {
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mission-grid--reverse .mission-subtitle {
+  text-align: left;
+}
+
+.text-content p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .mission-grid,
+  .mission-grid--reverse {
+    grid-template-columns: 1fr;
+    padding: 0 1rem !important;
+  }
+  .main-image-container,
+  .text-content {
+    grid-column: 1;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/* Force both children onto the SAME grid row (this fixes the reverse stacking) */
+.main-image-container,
+.text-content,
+.mission-grid--reverse .main-image-container,
+.mission-grid--reverse .text-content {
+  grid-row: 1;
+}
+</style>

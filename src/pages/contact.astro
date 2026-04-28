@@ -80,7 +80,16 @@ import miniFoxton from '../assets/images/minifoxton.jpeg';
 
   <style>
     .contact-hero { padding: 4rem 2rem; background: #fff; }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1380px; margin: 0 auto; align-items: center; }
+    .hero-grid { 
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: none;          /* ← this is the key jailbreak */
+      width: 100%;              /* ← this is the key jailbreak */
+      margin: 0 auto;
+      padding: 0 2rem;          /* matches the padding used on Our Work */
+      align-items: center; 
+    }
     .hero-image img { width: 100%; height: auto; border-radius: 0.75rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .hero-content h1 { font-size: clamp(2.75rem, 5vw, 3.8rem); line-height: 1.1; font-weight: 300; color: #0A3D2F; margin-bottom: 1.5rem; }
     .story-text { font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.65; color: #333; margin-bottom: 2rem; }
