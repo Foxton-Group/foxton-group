@@ -5,30 +5,32 @@ import miniFoxton from '../assets/images/minifoxton.jpeg';
 
 <MainLayout title="Contact Us | Foxton Group" showFooter={false}>
 
-  <!-- HERO WITH PHOTO -->
-  <section class="contact-hero">
-    <div class="hero-grid">
-      <div class="hero-image">
-        <img src={miniFoxton.src} alt="Mini Foxton For Scale" loading="eager" />
-      </div>
-      <div class="hero-content">
-        <h1>Construction Is in Our DNA</h1>
-        <p class="story-text">
-          By the looks of things that’s going to carry on to the next generation…<br><br>
-          We are a family business at heart but with several generations and 25 years leadership at the helm, we have the scale, knowhow and resource to get ‘the big stuff’ done too. 
-          We love complex sites, contaminated sites and outright extremes — fundamentally though if it’s genuine high quality we have the project covered.
-        </p>
-        <p class="callout">
-          We’d love to hear about your project.<br>
-          Let’s build something exceptional together.
-        </p>
-      </div>
+<!-- ONE SINGLE FULL-WIDTH CONTACT HERO -->
+<section class="contact-main">
+  <div class="main-grid">
+    
+    <!-- LEFT: Big image -->
+    <div class="hero-image">
+      <img src={miniFoxton.src} alt="Foxton Group" loading="eager" />
     </div>
-  </section>
 
-  <!-- FORM SECTION -->
-  <section class="contact-section">
-    <div class="contact-wrapper">
+    <!-- RIGHT: All content -->
+    <div class="content-side">
+      
+      <h1>Construction Is in Our DNA</h1>
+      
+      <p class="story-text">
+        By the looks of things that’s going to carry on to the next generation…<br><br>
+        We are a family business at heart but with several generations and 25 years leadership at the helm, we have the scale, knowhow and resource to get ‘the big stuff’ done too.<br><br>
+        We love complex sites, contaminated sites and outright extremes — fundamentally though if it’s genuine high quality we have the project covered.
+      </p>
+
+      <p class="callout">
+        We’d love to hear about your project.<br>
+        Let’s build something exceptional together.
+      </p>
+
+      <!-- FORM -->
       <div class="contact-form">
         <h2>Talk to Us</h2>
         <form action="https://formspree.io/f/xgornyrl" method="POST">
@@ -46,84 +48,168 @@ import miniFoxton from '../assets/images/minifoxton.jpeg';
           </div>
           <div class="form-group">
             <label for="message">Tell us about your project</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+            <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn-primary">SEND MESSAGE</button>
         </form>
       </div>
 
-      <!-- RIGHT: Contact Details -->
+      <!-- CONTACT DETAILS -->
       <div class="contact-details">
-        <h2>Foxton Group Ltd</h2>
-        <p>St Ives,<br>Cornwall, TR26 3HW</p>
+        <h3>Foxton Group Ltd</h3>
+        <p>St Ives, Cornwall, TR26 3HW</p>
         <div class="contact-info">
           <p><strong>Tel:</strong> <a href="tel:+447517109108">+44 (0) 7517 109108</a></p>
           <p><strong>Email:</strong> <a href="mailto:dan@foxton-group.com">dan@foxton-group.com</a></p>
           <p><strong>Vendors:</strong> <a href="mailto:accounts@foxton-group.com">accounts@foxton-group.com</a></p>
         </div>
-        <div class="socials">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="Facebook">Facebook</a>
-          <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        </div>
       </div>
+
     </div>
-  </section>
-
-  <!-- LEGAL BOX -->
-  <div class="legal-box">
-    <p>Please click here for our <a href="/privacy-policy">Privacy Policy</a>.</p>
-    <p>All content © Copyright 2026 Foxton Group Ltd and protected under UK and International law.<br>
-    Duplication, reproduction and/or distribution of any material on this website is strictly prohibited.<br>
-    All rights reserved.</p>
   </div>
+</section>
 
-  <style>
-    .contact-hero { padding: 4rem 2rem; background: #fff; }
-    .hero-grid { 
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: none;          /* ← this is the key jailbreak */
-      width: 100%;              /* ← this is the key jailbreak */
-      margin: 0 auto;
-      padding: 0 2rem;          /* matches the padding used on Our Work */
-      align-items: center; 
-    }
-    .hero-image img { width: 100%; height: auto; border-radius: 0.75rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .hero-content h1 { font-size: clamp(2.75rem, 5vw, 3.8rem); line-height: 1.1; font-weight: 300; color: #0A3D2F; margin-bottom: 1.5rem; }
-    .story-text { font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.65; color: #333; margin-bottom: 2rem; }
-    .callout { font-size: clamp(1.25rem, 2.2vw, 1.45rem); font-weight: 300; color: #0A3D2F; }
+<!-- LEGAL BOX -->
+<div class="legal-box">
+  <p>Please click here for our <a href="/privacy-policy">Privacy Policy</a>.</p>
+  <p>All content © Copyright 2026 Foxton Group Ltd and protected under UK and International law.<br>
+     Duplication, reproduction and/or distribution of any material on this website is strictly prohibited.<br>
+     All rights reserved.</p>
+</div>
 
-    .contact-section { padding: 5rem 2rem; background: #fff; }
-    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; max-width: 1380px; margin: 0 auto; }
-    .contact-form h2 { font-size: clamp(2rem, 3.5vw, 2.5rem); margin-bottom: 2rem; color: #0A3D2F; }
-    .form-group { margin-bottom: 1.75rem; }
-    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333; }
-    .form-group input, .form-group textarea { width: 100%; padding: 1rem 1.25rem; border: 1px solid #ddd; border-radius: 0.5rem; font-size: 1.05rem; }
-    .btn-primary { display: inline-block; background: #0f2c1f; color: white; padding: 1rem 3rem; border-radius: 9999px; font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease; }
-    .btn-primary:hover { background: #1a4733; transform: scale(1.05); }
+<style>
+.contact-main {
+  padding: 5rem 2rem;
+  background: #fff;
+}
 
-    .contact-details h2 { font-size: clamp(2rem, 3.5vw, 2.5rem); margin-bottom: 1.5rem; color: #0A3D2F; }
-    .contact-details p { font-size: 1.15rem; line-height: 1.6; margin-bottom: 1rem; }
-    .contact-info a { color: #0f2c1f; text-decoration: none; }
-    .contact-info a:hover { text-decoration: underline; }
-    .socials { display: flex; gap: 2rem; margin-top: 3rem; }
-    .socials a { font-size: 1.35rem; color: #0A3D2F; text-decoration: none; }
+.main-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 5rem;
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+  align-items: start;           /* keeps text pinned to top */
+}
 
-    .legal-box {
-      background: #fff;
-      padding: 2rem 2rem 3rem;
-      text-align: center;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #555;
-      border-top: 1px solid #eee;
-    }
-    .legal-box a { color: #0f2c1f; text-decoration: underline; }
+.hero-image {
+  margin-top: 8rem;           /* ← this lowers ONLY the image */
+}
 
-    @media (max-width: 1024px) {
-      .hero-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
-    }
-  </style>
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  display: block;
+}
+
+.content-side h1 {
+  font-size: clamp(2.75rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 300;
+  color: #0A3D2F;
+  margin-bottom: 1.5rem;
+}
+
+.story-text {
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.callout {
+  font-size: 1.45rem;
+  font-weight: 300;
+  color: #0A3D2F;
+  margin-bottom: 3rem;
+}
+
+.contact-form h2 {
+  font-size: 2.25rem;
+  color: #0A3D2F;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  background: #0f2c1f;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #1a4733;
+  transform: scale(1.05);
+}
+
+.contact-details {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.contact-details h3 {
+  font-size: 1.5rem;
+  color: #0A3D2F;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.75rem;
+}
+
+.contact-info a {
+  color: #0f2c1f;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+/* Center the Foxton Group contact details */
+.contact-details {
+  text-align: center;
+}
+
+/* Center the entire legal box + Privacy Policy */
+.legal-box {
+  text-align: center;
+  padding: 2.5rem 2rem 3rem;
+}
+</style>
+
 </MainLayout>
