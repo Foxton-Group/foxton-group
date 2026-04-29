@@ -63,9 +63,9 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
   align-items: start;
   width: 100% !important;
   max-width: none !important;
-  margin-left: 15vw !important;
-  margin-right: 0 !important;
-  padding: 0 0rem !important;
+  margin-left: 0 !important;
+  margin-right: -15vw !important;
+  padding: 0 2rem !important;
 }
 
 /* Children — explicit for BOTH layouts */
@@ -73,7 +73,6 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
   grid-column: 1;
   align-self: start;
 }
-
 .mission-grid--reverse .main-image-container {
   grid-column: 3;
   align-self: start;
@@ -81,19 +80,16 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
 
 .text-content {
   grid-column: 3;
-  padding-top: 2rem;
+  padding-top: 0.15rem;
   padding-left: 0;
   padding-right: 2rem;
-  margin-right: -15vw;
   align-self: stretch;
 }
-
 .mission-grid--reverse .text-content {
   grid-column: 1;
-  padding-top: 2rem;
-  padding-left: 0rem;
-  padding-right: 15vw;
-  margin-left: -20vw;
+  padding-top: 0.15rem;
+  padding-left: 2rem;
+  padding-right: 0;
   align-self: stretch;
 }
 
@@ -107,7 +103,6 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
   letter-spacing: 1px;
   text-align: center;
 }
-
 .mission-grid--reverse .text-content h3 {
   text-align: left;
 }
@@ -119,7 +114,6 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
   margin-bottom: 1rem;
   text-align: center;
 }
-
 .mission-grid--reverse .mission-subtitle {
   text-align: left;
 }
@@ -130,21 +124,32 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
   color: #333;
 }
 
-/* Mobile */
+/* ──────── MOBILE STACKING (image first, then text) ──────── */
 @media (max-width: 1024px) {
   .mission-grid,
   .mission-grid--reverse {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     padding: 0 1rem !important;
   }
+
   .main-image-container,
-  .text-content {
+  .text-content,
+  .mission-grid--reverse .main-image-container,
+  .mission-grid--reverse .text-content {
     grid-column: 1;
+  }
+
+  .text-content {
+    padding-top: 0;
     padding-left: 0;
     padding-right: 0;
   }
 }
-/* Force both children onto the SAME grid row (this fixes the reverse stacking) */
+
+/* Force both children onto the same row (safety for reverse) */
 .main-image-container,
 .text-content,
 .mission-grid--reverse .main-image-container,

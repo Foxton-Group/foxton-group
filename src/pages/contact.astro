@@ -90,11 +90,14 @@ import miniFoxton from '../assets/images/minifoxton.jpeg';
   max-width: none;
   width: 100%;
   margin: 0 auto;
-  align-items: start;           /* keeps text pinned to top */
+  align-items: start;
 }
 
-.hero-image {
-  margin-top: 8rem;           /* ← this lowers ONLY the image */
+/* Desktop only - big image offset */
+@media (min-width: 1025px) {
+  .hero-image {
+    margin-top: 8rem;
+  }
 }
 
 .hero-image img {
@@ -105,53 +108,16 @@ import miniFoxton from '../assets/images/minifoxton.jpeg';
   display: block;
 }
 
-.content-side h1 {
-  font-size: clamp(2.75rem, 5vw, 3.8rem);
-  line-height: 1.1;
-  font-weight: 300;
-  color: #0A3D2F;
-  margin-bottom: 1.5rem;
-}
+/* Text & form styles */
+.content-side h1 { font-size: clamp(2.75rem, 5vw, 3.8rem); line-height: 1.1; font-weight: 300; color: #0A3D2F; margin-bottom: 1.5rem; }
+.story-text { font-size: 1.25rem; line-height: 1.65; color: #333; margin-bottom: 2rem; }
+.callout { font-size: 1.45rem; font-weight: 300; color: #0A3D2F; margin-bottom: 3rem; }
 
-.story-text {
-  font-size: 1.25rem;
-  line-height: 1.65;
-  color: #333;
-  margin-bottom: 2rem;
-}
-
-.callout {
-  font-size: 1.45rem;
-  font-weight: 300;
-  color: #0A3D2F;
-  margin-bottom: 3rem;
-}
-
-.contact-form h2 {
-  font-size: 2.25rem;
-  color: #0A3D2F;
-  margin-bottom: 1.5rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #333;
-}
-
+.contact-form h2 { font-size: 2.25rem; color: #0A3D2F; margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333; }
 .form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 1rem 1.25rem;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  font-size: 1.05rem;
-}
+.form-group textarea { width: 100%; padding: 1rem 1.25rem; border: 1px solid #ddd; border-radius: 0.5rem; font-size: 1.05rem; }
 
 .btn-primary {
   background: #0f2c1f;
@@ -162,50 +128,49 @@ import miniFoxton from '../assets/images/minifoxton.jpeg';
   font-size: 1.1rem;
   transition: all 0.3s ease;
 }
-
-.btn-primary:hover {
-  background: #1a4733;
-  transform: scale(1.05);
-}
+.btn-primary:hover { background: #1a4733; transform: scale(1.05); }
 
 .contact-details {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid #eee;
+  text-align: center;
 }
+.contact-details h3 { font-size: 1.5rem; color: #0A3D2F; margin-bottom: 0.5rem; }
+.contact-info p { margin-bottom: 0.75rem; }
+.contact-info a { color: #0f2c1f; text-decoration: none; }
+.contact-info a:hover { text-decoration: underline; }
 
-.contact-details h3 {
-  font-size: 1.5rem;
-  color: #0A3D2F;
-  margin-bottom: 0.5rem;
-}
-
-.contact-info p {
-  margin-bottom: 0.75rem;
-}
-
-.contact-info a {
-  color: #0f2c1f;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile */
+/* ──────── MOBILE ──────── */
 @media (max-width: 1024px) {
   .main-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
+  }
+  
+  .hero-image {
+    margin-top: 0 !important;   /* removes the huge desktop offset */
+  }
+  
+  .hero-image img {
+    border-radius: 8px;
+  }
+
+  .content-side h1 {
+    font-size: 2.4rem;
+  }
+  
+  .story-text,
+  .callout {
+    font-size: 1.1rem;
+  }
+  
+  .contact-form h2 {
+    font-size: 2rem;
   }
 }
-/* Center the Foxton Group contact details */
-.contact-details {
-  text-align: center;
-}
 
-/* Center the entire legal box + Privacy Policy */
+/* Legal box */
 .legal-box {
   text-align: center;
   padding: 2.5rem 2rem 3rem;
