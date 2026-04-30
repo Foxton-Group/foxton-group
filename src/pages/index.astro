@@ -3,6 +3,11 @@ import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import HeroCarousel from '../components/HeroCarousel.astro';
 import petrellenImg from '../assets/images/general/Petrellen Court.jpeg'; 
+import PortfolioCard from '../components/PortfolioCard.astro';
+import listedImg from '../assets/images/general/Petrellen Court.jpeg';
+import residentialImg from '../assets/images/Peel Street/Peel Street Dining.jpeg';
+import commercialImg from '../assets/images/our-work/commercial/COM4.jpeg';
+import logo from '../assets/images/logos/Logo-final.jpeg';
 ---
 
 <MainLayout title="Foxton Group | Luxury Residential & Commercial Construction">
@@ -40,6 +45,51 @@ import petrellenImg from '../assets/images/general/Petrellen Court.jpeg';
         </div>
       </div>
     </div>
+
+    <!-- ==================== OUR PORTFOLIO (3 cards) ==================== -->
+  <section class="portfolio">
+    <div class="container">
+      <h2>Our Portfolio</h2>
+      <p class="subtitle">Featured projects across our core Specialisms</p>
+
+      <!-- ←←← THIS WRAPPER MAKES THE 3-COLUMN GRID WORK →→→ -->
+      <div class="portfolio-grid">
+        <PortfolioCard
+          image={listedImg}
+          title="Listed Building Specialists"
+          description="Heritage restorations, sympathetic extensions and alterations across Cornwall."
+          link="/projects/petrellen-court"
+        />
+        <PortfolioCard
+          image={residentialImg}
+          title="High-End Residential"
+          description="Luxury new builds, refurbishments and bespoke homes for discerning clients."
+          link="/projects/residential"
+        />
+        <PortfolioCard
+          image={commercialImg}
+          title="Commercial, Retail & Hospitality"
+          description="Commercial fit-outs, restaurants, hotels and high-end retail spaces."
+          link="/projects/commercial"
+        />
+      </div>
+    </div>
+
+    <!-- ==================== OUR PARTNERS ==================== -->
+  <section class="partners">
+    <div class="container">
+      <h2>Our Partners</h2>
+      <div class="partners-logos">
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+      </div>
+    </div>
   </section>
 
   <style>
@@ -60,6 +110,7 @@ import petrellenImg from '../assets/images/general/Petrellen Court.jpeg';
       max-width: 1380px;
       margin: 0 auto;
       width: 100%;
+      padding-bottom: 3rem;
     }
     .what-we-do-grid {
       display: flex;
@@ -106,5 +157,89 @@ import petrellenImg from '../assets/images/general/Petrellen Court.jpeg';
     @media (max-width: 768px) {
       .hallway-grid, .what-we-do-grid { flex-direction: column; gap: 3rem; }
     }
+
+/* ===================== PORTFOLIO SECTION ===================== */
+.portfolio {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.portfolio h2,
+.subtitle {
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 3.1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* Wide full-width grid - no more trapped cards */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2.5rem;
+  max-width: none;        /* full bleed */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Extra wide on big screens (matches the rest of your site) */
+@media (min-width: 1800px) {
+  .portfolio-grid {
+    max-width: 1600px;
+  }
+}
+
+    /* ===================== OUR PARTNERS ===================== */
+.partners {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.partners h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 3rem;
+  color: #0A3D2F;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+ width: 100%; margin: 0 auto; padding: 0 2rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.partners-logos img {
+  height: 65px;
+  width: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.partners-logos img:hover {
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .partners-logos {
+    gap: 2rem;
+  }
+  .partners-logos img {
+    height: 55px;
+  }
+}
   </style>
 </MainLayout>

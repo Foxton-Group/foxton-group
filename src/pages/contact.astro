@@ -1,180 +1,187 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import miniFoxton from '../assets/images/minifoxton.jpeg';
+import logo from '../assets/images/logos/Logo-final.jpeg';
 ---
 
 <MainLayout title="Contact Us | Foxton Group" showFooter={false}>
-
-<!-- ONE SINGLE FULL-WIDTH CONTACT HERO -->
-<section class="contact-main">
-  <div class="main-grid">
-    
-    <!-- LEFT: Big image -->
-    <div class="hero-image">
-      <img src={miniFoxton.src} alt="Foxton Group" loading="eager" />
-    </div>
-
-    <!-- RIGHT: All content -->
-    <div class="content-side">
-      
-      <h1>Construction Is in Our DNA</h1>
-      
-      <p class="story-text">
-        By the looks of things that’s going to carry on to the next generation…<br><br>
-        We are a family business at heart but with several generations and 25 years leadership at the helm, we have the scale, knowhow and resource to get ‘the big stuff’ done too.<br><br>
-        We love complex sites, contaminated sites and outright extremes — fundamentally though if it’s genuine high quality we have the project covered.
-      </p>
-
-      <p class="callout">
-        We’d love to hear about your project.<br>
-        Let’s build something exceptional together.
-      </p>
-
-      <!-- FORM -->
-      <div class="contact-form">
-        <h2>Talk to Us</h2>
-        <form action="https://formspree.io/f/xgornyrl" method="POST">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="form-group">
-            <label for="message">Tell us about your project</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary">SEND MESSAGE</button>
-        </form>
+  <!-- ONE SINGLE FULL-WIDTH CONTACT HERO -->
+  <section class="contact-main">
+    <div class="main-grid">
+      <!-- LEFT: Big image -->
+      <div class="hero-image">
+        <img src={miniFoxton.src} alt="Foxton Group" loading="eager" />
       </div>
 
-      <!-- CONTACT DETAILS -->
-      <div class="contact-details">
-        <h3>Foxton Group Ltd</h3>
-        <p>St Ives, Cornwall, TR26 3HW</p>
-        <div class="contact-info">
-          <p><strong>Tel:</strong> <a href="tel:+447517109108">+44 (0) 7517 109108</a></p>
-          <p><strong>Email:</strong> <a href="mailto:dan@foxton-group.com">dan@foxton-group.com</a></p>
-          <p><strong>Vendors:</strong> <a href="mailto:accounts@foxton-group.com">accounts@foxton-group.com</a></p>
+      <!-- RIGHT: All content -->
+      <div class="content-side">
+        <h1>Construction Is in Our DNA</h1>
+        <p class="story-text">
+          By the looks of things that’s going to carry on to the next generation…<br><br>
+          We are a family business at heart but with several generations and 25 years leadership at the helm, we have the scale, knowhow and resource to get ‘the big stuff’ done too.<br><br>
+          We love complex sites, contaminated sites and outright extremes — fundamentally though if it’s genuine high quality we have the project covered.
+        </p>
+        <p class="callout">
+          We’d love to hear about your project.<br>
+          Let’s build something exceptional together.
+        </p>
+
+        <!-- FORM -->
+        <div class="contact-form">
+          <h2>Talk to Us</h2>
+          <form action="https://formspree.io/f/xgornyrl" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your project</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">SEND MESSAGE</button>
+          </form>
+        </div>
+
+        <!-- CONTACT DETAILS -->
+        <div class="contact-details">
+          <h3>Foxton Group Ltd</h3>
+          <p>St Ives, Cornwall, TR26 3HW</p>
+          <div class="contact-info">
+            <p><strong>Tel:</strong> <a href="tel:+447517109108">+44 (0) 7517 109108</a></p>
+            <p><strong>Office Tel:</strong> <a href="tel:01736595658">01736 595658</a></p>
+            <p><strong>Email:</strong> <a href="mailto:dan@foxton-group.com">dan@foxton-group.com</a></p>
+            <p><strong>Vendors:</strong> <a href="mailto:accounts@foxton-group.com">accounts@foxton-group.com</a></p>
+          </div>
         </div>
       </div>
-
     </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="who-we-are">
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p>We are a Cornwall based, family run construction company with over 25 years of hands on experience, built on a genuine love of craftsmanship and attention to detail. From our base in St Ives, we’ve delivered projects across Cornwall, London, stretching as far as Auckland, including high end heritage restorations, architecturally designed homes, and multi million pound commercial builds.</p>
+      <p>With a background in carpentry and joinery, we care about the client’s experience and the finish just as much as the bigger picture. We combine that traditional skill with a practical, modern approach, keeping quality at the centre of everything we do. We keep things straightforward and collaborative, working closely with our clients to make the process clear and well managed from start to finish. We take real pride in delivering projects on time and within budget, without cutting corners.</p>
+      <p>Led by Dan and Lizzie, the business is shaped by our life here in Cornwall. When we’re not working, you’ll find us outdoors with our three children, surfing, windsurfing, or exploring the coast, and that sense of balance and compassion carries through into the way we deliver client projects with care and precision.</p>
+    </div>
+  </section>
+
+  <!-- OUR PARTNERS -->
+  <section class="partners">
+    <div class="container">
+      <h2>Our Partners</h2>
+      <div class="partners-logos">
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+        <img src={logo.src} alt="Foxton Partner" />
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGAL BOX -->
+  <div class="legal-box">
+    <p>Please click here for our <a href="/privacy-policy">Privacy Policy</a>.</p>
+    <p>All content © Copyright 2026 Foxton Group Ltd and protected under UK and International law.<br>
+       Duplication, reproduction and/or distribution of any material on this website is strictly prohibited.<br>
+       All rights reserved.</p>
   </div>
-</section>
 
-<!-- LEGAL BOX -->
-<div class="legal-box">
-  <p>Please click here for our <a href="/privacy-policy">Privacy Policy</a>.</p>
-  <p>All content © Copyright 2026 Foxton Group Ltd and protected under UK and International law.<br>
-     Duplication, reproduction and/or distribution of any material on this website is strictly prohibited.<br>
-     All rights reserved.</p>
-</div>
+  <style>
+    .contact-main { padding: 5rem 2rem; background: #fff; }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 5rem;
+      max-width: none;
+      width: 100%;
+      margin: 0 auto;
+      align-items: start;
+    }
+    @media (min-width: 1025px) { .hero-image { margin-top: 8rem; } }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      display: block;
+    }
 
-<style>
-.contact-main {
-  padding: 5rem 2rem;
-  background: #fff;
-}
+    .content-side h1 { font-size: clamp(2.75rem, 5vw, 3.8rem); line-height: 1.1; font-weight: 300; color: #0A3D2F; margin-bottom: 1.5rem; }
+    .story-text { font-size: 1.25rem; line-height: 1.65; color: #333; margin-bottom: 2rem; }
+    .callout { font-size: 1.45rem; font-weight: 300; color: #0A3D2F; margin-bottom: 3rem; }
+    .contact-form h2 { font-size: 2.25rem; color: #0A3D2F; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 1rem 1.25rem; border: 1px solid #ddd; border-radius: 0.5rem; font-size: 1.05rem;
+    }
+    .btn-primary {
+      background: #0f2c1f; color: white; padding: 1rem 3rem; border-radius: 9999px;
+      font-weight: 500; font-size: 1.1rem; transition: all 0.3s ease;
+    }
+    .btn-primary:hover { background: #1a4733; transform: scale(1.05); }
 
-.main-grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 5rem;
-  max-width: none;
-  width: 100%;
-  margin: 0 auto;
-  align-items: start;
-}
+    .contact-details {
+      margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; text-align: center;
+    }
+    .contact-details h3 { font-size: 1.5rem; color: #0A3D2F; margin-bottom: 0.5rem; }
+    .contact-info p { margin-bottom: 0.75rem; }
+    .contact-info a { color: #0f2c1f; text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
 
-/* Desktop only - big image offset */
-@media (min-width: 1025px) {
-  .hero-image {
-    margin-top: 8rem;
-  }
-}
+    /* Who We Are */
+    .who-we-are { padding: 5rem 0; background: #fff; }
+    .who-we-are h2 {
+      text-align: center; font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 2.5rem; color: #0A3D2F;
+    }
+    .who-we-are p {
+    width: 90%; margin: 0 auto 3.0rem; font-size: 1.1rem; line-height: 1.7; color: #333;
+    }
 
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  display: block;
-}
+    /* Partners */
+    .partners { padding: 5rem 0; background: #fff; }
+    .partners h2 {
+      text-align: center; font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 3rem; color: #0A3D2F;
+    }
+    .partners-logos {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;
+      width: 100%; margin: 0 auto 3.0rem; padding: 0 2rem;
+    }
+    .partners-logos img { height: 65px; width: auto; opacity: 0.85; transition: opacity 0.3s ease; }
+    .partners-logos img:hover { opacity: 1; }
 
-/* Text & form styles */
-.content-side h1 { font-size: clamp(2.75rem, 5vw, 3.8rem); line-height: 1.1; font-weight: 300; color: #0A3D2F; margin-bottom: 1.5rem; }
-.story-text { font-size: 1.25rem; line-height: 1.65; color: #333; margin-bottom: 2rem; }
-.callout { font-size: 1.45rem; font-weight: 300; color: #0A3D2F; margin-bottom: 3rem; }
+    /* Mobile */
+    @media (max-width: 1024px) {
+      .main-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-image { margin-top: 0 !important; }
+      .hero-image img { border-radius: 8px; }
+      .content-side h1 { font-size: 2.4rem; }
+      .story-text, .callout { font-size: 1.1rem; }
+      .contact-form h2 { font-size: 2rem; }
+    }
 
-.contact-form h2 { font-size: 2.25rem; color: #0A3D2F; margin-bottom: 1.5rem; }
-.form-group { margin-bottom: 1.5rem; }
-.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: #333; }
-.form-group input,
-.form-group textarea { width: 100%; padding: 1rem 1.25rem; border: 1px solid #ddd; border-radius: 0.5rem; font-size: 1.05rem; }
+    /* Legal box */
+    .legal-box {
+      text-align: center; padding: 2.5rem 2rem 3rem;
+    }
 
-.btn-primary {
-  background: #0f2c1f;
-  color: white;
-  padding: 1rem 3rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-}
-.btn-primary:hover { background: #1a4733; transform: scale(1.05); }
-
-.contact-details {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #eee;
-  text-align: center;
-}
-.contact-details h3 { font-size: 1.5rem; color: #0A3D2F; margin-bottom: 0.5rem; }
-.contact-info p { margin-bottom: 0.75rem; }
-.contact-info a { color: #0f2c1f; text-decoration: none; }
-.contact-info a:hover { text-decoration: underline; }
-
-/* ──────── MOBILE ──────── */
-@media (max-width: 1024px) {
-  .main-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  
-  .hero-image {
-    margin-top: 0 !important;   /* removes the huge desktop offset */
-  }
-  
-  .hero-image img {
-    border-radius: 8px;
-  }
-
-  .content-side h1 {
-    font-size: 2.4rem;
-  }
-  
-  .story-text,
-  .callout {
-    font-size: 1.1rem;
-  }
-  
-  .contact-form h2 {
-    font-size: 2rem;
-  }
-}
-
-/* Legal box */
-.legal-box {
-  text-align: center;
-  padding: 2.5rem 2rem 3rem;
-}
-</style>
-
+    /* Container helper */
+    .container {
+      max-width: none; width: 100%; padding: 0 2rem; margin: 0 auto;
+    }
+  </style>
 </MainLayout>

@@ -40,7 +40,7 @@ const thumbnails = images.slice(1);
 /* ===================== WORK CATEGORY COMPONENT ===================== */
 .work-category {
   display: grid;
-  grid-template-columns: 380px 115px 1fr;
+  grid-template-columns: 460px 95px 1fr;
   gap: 1.5rem;
   margin-bottom: 4.5rem;
   align-items: start;
@@ -55,11 +55,11 @@ const thumbnails = images.slice(1);
 .thumbnail-stack { grid-column: 2; }
 .text-content { grid-column: 3; }
 
-/* Images & thumbnails */
+/* Images */
 .featured-image,
 .thumbnail {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 5 / 4;           /* ← changed from 16/10 */
   object-fit: cover;
   border-radius: 12px;
   cursor: pointer;
@@ -69,17 +69,18 @@ const thumbnails = images.slice(1);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  align-self: center;
 }
 
 .thumbnail {
-  aspect-ratio: 4 / 3;
-  max-width: 115px;
+  aspect-ratio: 4 / 3;           /* thumbnails also 4/3 now for consistency */
+  max-width: 95px;
 }
 
 /* Text */
 .text-content {
   padding-top: 0.25rem;
-  padding-right: 2rem;
+  padding-right: 1.25rem;
 }
 
 .text-content h3 {
@@ -93,11 +94,11 @@ const thumbnails = images.slice(1);
 
 .text-content p {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: #333;
 }
 
-/* ──────── MOBILE ──────── */
+/* Mobile */
 @media (max-width: 1024px) {
   .work-category {
     grid-template-columns: 1fr;
@@ -105,33 +106,22 @@ const thumbnails = images.slice(1);
     max-width: none;
     padding: 0 1rem;
   }
-  
   .thumbnail-stack {
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
   }
-  
-  .thumbnail {
-    max-width: 110px;
-  }
-  
+  .thumbnail { max-width: 105px; }
   .text-content {
     padding-top: 0;
     padding-right: 0;
     text-align: center;
   }
-  
-  .text-content h3 {
-    text-align: center;
-  }
 }
 
-/* Full-screen / extra-large consistency (matches heritage + our-work pages) */
+/* Extra large screens */
 @media (min-width: 1800px) {
-  .work-category {
-    max-width: 1600px;
-  }
+  .work-category { max-width: 1600px; }
 }
 </style>
 

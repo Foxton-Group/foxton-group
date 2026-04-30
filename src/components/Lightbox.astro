@@ -19,7 +19,24 @@ const { categoryImages } = Astro.props;
 .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; z-index: 9999; }
 .lightbox-content { position: relative; max-height: 90vh; max-width: 90vw; }
 .close-btn { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; color: white; font-size: 3rem; cursor: pointer; z-index: 10000; line-height: 1; }
-.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); color: #1a1a1a; width: 52px; height: 52px; border: none; border-radius: 50%; font-size: 2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10000; }
+.nav-btn {
+  position: fixed;           /* this stops the bouncing */
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  color: #1a1a1a;
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+  font-size: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 .prev-btn { left: 1.5rem; }
 .next-btn { right: 1.5rem; }
 #lightbox-image { max-height: 90vh; max-width: 90vw; object-fit: contain; }

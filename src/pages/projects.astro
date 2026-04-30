@@ -64,34 +64,44 @@ import commercialImg from '../assets/images/our-work/commercial/COM4.jpeg';
   </section>
 
  <style>
-/* ===================== PORTFOLIO SECTION ===================== */
+/* ===================== PORTFOLIO SECTION (Home Page - Full Width) ===================== */
 .portfolio {
   padding: 5rem 0;
   background: #fff;
 }
+
 .portfolio h2,
 .subtitle {
   text-align: center;
 }
+
 .portfolio h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 0.5rem;
 }
+
 .subtitle {
   font-size: 1.1rem;
   color: #555;
   margin-bottom: 3rem;
 }
 
-/* Wide cards on 24" screens */
+/* Wide full-width grid - no more trapped cards */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2.5rem;
-  max-width: none;
+  max-width: none;        /* full bleed */
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Extra wide on big screens (matches the rest of your site) */
+@media (min-width: 1800px) {
+  .portfolio-grid {
+    max-width: 1600px;
+  }
 }
 
 /* ===================== TESTIMONIALS SECTION ===================== */
