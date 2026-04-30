@@ -77,15 +77,11 @@ const mission8Images = [img8_5, img8_1, img8_2, img8_3, img8_4];
 ---
 
 <MainLayout title="Heritage | Foxton Group">
-  <main class="bg-white">
-    <!-- Page Header -->
-    <div class="pt-24 pb-16 bg-neutral-50 border-b" style="margin-bottom: 5rem !important;">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <h1 class="text-5xl lg:text-6xl font-light tracking-tight text-neutral-900 text-center">
-          Historic Building Specialists Preserving Heritage with Unrivalled Craftsmanship
-        </h1>
-      </div>
-    </div>
+
+  <!-- ==================== HERITAGE MISSIONS ==================== -->
+<section class="heritage-missions">
+  <div class="container">
+  
     <!-- MISSION 1 - Ceiling (carousel left) -->
     <MissionSection 
       carouselId="mission1"
@@ -163,5 +159,29 @@ const mission8Images = [img8_5, img8_1, img8_2, img8_3, img8_4];
     reverse={true}
   />
 
-</main>
+</div>
+</section>
+
+<style>
+/* ===================== HERITAGE MISSIONS ===================== */
+.heritage-missions {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+/* Slightly wider on massive screens if you want */
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+</style>
+
 </MainLayout>

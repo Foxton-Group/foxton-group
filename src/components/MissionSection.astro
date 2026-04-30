@@ -41,34 +41,31 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
 </div>
 
 <style>
-.mission-grid {
-  display: grid;
-  grid-template-columns: 33.6vw 13vw 1fr;
-  gap: 1rem;
-  margin-bottom: 4rem;
-  align-items: start;
-  width: 100% !important;
-  max-width: none !important;
-  margin-left: -15vw !important;
-  margin-right: 0 !important;
-  padding: 0 2rem !important;
-}
-
-/* ──────── REVERSE GRID (completely independent) ──────── */
+/* Clean centered container - same pattern as Contact/Projects */
+.mission-grid,
 .mission-grid--reverse {
   display: grid;
-  grid-template-columns: 1fr 13vw 33.6vw;
   gap: 1rem;
   margin-bottom: 4rem;
   align-items: start;
+  max-width: 1480px;           /* ← this keeps it balanced on massive screens */
+  margin-left: auto;
+  margin-right: auto;
   width: 100% !important;
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: -15vw !important;
-  padding: 0 2rem !important;
+  padding: 0 2rem;
 }
 
-/* Children — explicit for BOTH layouts */
+/* Normal layout - image on left */
+.mission-grid {
+  grid-template-columns: 33.6vw 13vw 1fr;
+}
+
+/* Reverse layout - image on right */
+.mission-grid--reverse {
+  grid-template-columns: 1fr 13vw 33.6vw;
+}
+
+/* Children positioning */
 .main-image-container {
   grid-column: 1;
   align-self: start;
@@ -93,7 +90,7 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
   align-self: stretch;
 }
 
-/* Text styling (same for both) */
+/* Text styling (unchanged) */
 .text-content h3 {
   font-size: 1.8rem;
   font-weight: 600;
@@ -124,24 +121,20 @@ const { carouselId, images, title, subtitle, description, pdfUrl, reverse = fals
   color: #333;
 }
 
-/* ──────── MOBILE STACKING (image first, then text) ──────── */
+/* Mobile stacking - image first, then text */
 @media (max-width: 1024px) {
   .mission-grid,
   .mission-grid--reverse {
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 1rem !important;
+    padding: 0 1rem;
   }
-
   .main-image-container,
   .text-content,
   .mission-grid--reverse .main-image-container,
   .mission-grid--reverse .text-content {
     grid-column: 1;
   }
-
   .text-content {
     padding-top: 0;
     padding-left: 0;
