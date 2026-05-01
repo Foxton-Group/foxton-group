@@ -59,7 +59,7 @@ const thumbnails = images.slice(1);
 .featured-image,
 .thumbnail {
   width: 100%;
-  aspect-ratio: 5 / 4;           /* ← changed from 16/10 */
+  aspect-ratio: 5 / 4;
   object-fit: cover;
   border-radius: 12px;
   cursor: pointer;
@@ -73,7 +73,7 @@ const thumbnails = images.slice(1);
 }
 
 .thumbnail {
-  aspect-ratio: 4 / 3;           /* thumbnails also 4/3 now for consistency */
+  aspect-ratio: 4 / 3;
   max-width: 95px;
 }
 
@@ -98,11 +98,40 @@ const thumbnails = images.slice(1);
   color: #333;
 }
 
-/* Mobile */
+/* ===================== MOBILE - SIMPLE & CLEAN ===================== */
 @media (max-width: 1024px) {
   .work-category {
-    flex-direction: column;   ← this is wrong
-    ...
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: none;
+    padding: 0 1rem;
+  }
+
+  /* Hide thumbnails completely on mobile */
+  .thumbnail-stack {
+    display: none;
+  }
+
+  /* Make main image full width and obvious it's clickable */
+  .featured-image {
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+  }
+
+  .text-content {
+    padding-top: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  /* Optional helpful hint for mobile users */
+  .text-content::before {
+    content: "Tap image to view full gallery";
+    display: block;
+    font-size: 0.9rem;
+    color: #0A3D2F;
+    margin-bottom: 0.75rem;
+    font-style: italic;
   }
 }
 
@@ -111,22 +140,3 @@ const thumbnails = images.slice(1);
   .work-category { max-width: 1600px; }
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Attach click listeners to all thumbnails in this component
-  const images = document.querySelectorAll('.work-category img[data-cat]');
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      const cat = img.getAttribute('data-cat');
-      const idx = parseInt(img.getAttribute('data-idx') || '0');
-      console.log('🔥 Thumbnail clicked → Category:', cat, 'Index:', idx);
-      if (typeof window.openLightbox === 'function') {
-        window.openLightbox(cat, idx);
-      } else {
-        console.error('window.openLightbox function not found');
-      }
-    });
-  });
-});
-</script>
