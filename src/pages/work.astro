@@ -138,15 +138,33 @@ import str1 from '../assets/images/our-work/structural/STR7.jpeg';
     flex-direction: column;
     gap: 3rem;
   }
+  
   .hero {
     padding: 3rem 1.5rem 2.5rem;
   }
 }
 
-/* Wider container on massive screens */
+/* Wider container on massive screens (matches heritage page) */
 @media (min-width: 1800px) {
   .categories-wrapper {
     max-width: 1600px;
+  }
+}
+</style>
+</MainLayout>
+
+<style>
+.hero { text-align: center; padding: 2rem 0 2.25rem; }
+.hero h1 { font-size: clamp(2.75rem, 5vw, 3.625rem); line-height: 1.1; font-weight: 600; color: #0A3D2F; margin-bottom: 1.25rem; text-align: center; }
+.quote { font-size: clamp(1.1rem, 2vw, 1.25rem); font-style: italic; max-width: 51.25rem; margin: 0 auto; line-height: 1.4; color: #333; }
+
+.categories-wrapper { max-width: none; margin: 0 auto; padding: 0 1.25rem; width: 100%; box-sizing: border-box; }
+.pair { display: flex; gap: 2.5rem; margin-bottom: 4rem; }
+/* Mobile - stack the two categories vertically */
+@media (max-width: 1024px) {
+  .pair {
+    flex-direction: column;
+    gap: 3rem;
   }
 }
 </style>
