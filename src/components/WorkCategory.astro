@@ -98,30 +98,25 @@ const thumbnails = images.slice(1);
   color: #333;
 }
 
-//* Mobile - simple, balanced, main image prominent */
+
+/* Mobile stacking - image first, then text */
 @media (max-width: 1024px) {
   .work-category {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: none;
+    gap: 2rem;
     padding: 0 1rem;
   }
-
-  .thumbnail-stack {
-    display: none;   /* hide thumbnails completely on mobile */
+  .main-image-container,
+  .text-content {
+    grid-column: 1;
   }
-
-  .featured-image {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    border-radius: 12px;
-  }
-
   .text-content {
     padding-top: 0;
+    padding-left: 0;
     padding-right: 0;
-    text-align: center;   /* centres the text properly */
   }
+  .thumbnail-stack {
+  display: none !important;
 }
 
 /* Extra large screens */
