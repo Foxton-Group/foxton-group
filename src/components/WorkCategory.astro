@@ -98,7 +98,7 @@ const thumbnails = images.slice(1);
   color: #333;
 }
 
-/* ===================== MOBILE - SIMPLE & CLEAN ===================== */
+/* Mobile - simple, balanced, main image prominent */
 @media (max-width: 1024px) {
   .work-category {
     grid-template-columns: 1fr;
@@ -107,13 +107,12 @@ const thumbnails = images.slice(1);
     padding: 0 1rem;
   }
 
-  /* Hide thumbnails completely on mobile */
   .thumbnail-stack {
-    display: none;
+    display: none;   /* hide thumbnails completely on mobile */
   }
 
-  /* Make main image full width and obvious it's clickable */
   .featured-image {
+    width: 100%;
     aspect-ratio: 16 / 10;
     border-radius: 12px;
   }
@@ -121,17 +120,7 @@ const thumbnails = images.slice(1);
   .text-content {
     padding-top: 0;
     padding-right: 0;
-    text-align: center;
-  }
-
-  /* Optional helpful hint for mobile users */
-  .text-content::before {
-    content: "Tap image to view full gallery";
-    display: block;
-    font-size: 0.9rem;
-    color: #0A3D2F;
-    margin-bottom: 0.75rem;
-    font-style: italic;
+    text-align: center;   /* centres the text properly */
   }
 }
 
