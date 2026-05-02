@@ -3,7 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import '/src/assets/fonts/raleway.css';
-const { title = 'Foxton Group', showFooter = true } = Astro.props;
+const { title = 'Foxton Group' } = Astro.props;
 ---
 
 <!doctype html>
@@ -39,7 +39,7 @@ const { title = 'Foxton Group', showFooter = true } = Astro.props;
     <slot />
   </main>
 
-{showFooter && <Footer />}
+<Footer />
 
 </body>
 </html>
