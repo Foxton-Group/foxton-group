@@ -1,0 +1,170 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import WorkCategory from '../components/WorkCategory.astro';
+import Lightbox from '../components/Lightbox.astro';
+
+// CARPENTRY
+import car1 from '../assets/images/our-work/carpentry/CAR1.jpeg';
+import car2 from '../assets/images/our-work/carpentry/CAR2.jpeg';
+import car3 from '../assets/images/our-work/carpentry/CAR3.jpeg';
+import car4 from '../assets/images/our-work/carpentry/CAR4.jpeg';
+import car5 from '../assets/images/our-work/carpentry/CAR5.jpeg';
+import car6 from '../assets/images/our-work/carpentry/CAR6.jpeg';
+
+// JOINERY
+import j1 from '../assets/images/our-work/joinery/J1.jpeg';
+import j2 from '../assets/images/our-work/joinery/J2.jpeg';
+import j3 from '../assets/images/our-work/joinery/J3.jpeg';
+import j4 from '../assets/images/our-work/joinery/J4.jpeg';
+import j5 from '../assets/images/our-work/joinery/J5.jpeg';
+import j6 from '../assets/images/our-work/joinery/J6.jpeg';
+
+// HERITAGE
+import her1 from '../assets/images/our-work/heritage/HER1.jpeg';
+import her2 from '../assets/images/our-work/heritage/HER2.jpeg';
+import her3 from '../assets/images/our-work/heritage/HER3.jpeg';
+import her4 from '../assets/images/our-work/heritage/HER4.jpeg';
+import her5 from '../assets/images/our-work/heritage/HER5.jpeg';
+import her6 from '../assets/images/our-work/heritage/HER6.jpeg';
+
+// COMMERCIAL
+import com1 from '../assets/images/our-work/commercial/COM1.jpeg';
+import com2 from '../assets/images/our-work/commercial/COM2.jpeg';
+import com3 from '../assets/images/our-work/commercial/COM3.jpeg';
+import com4 from '../assets/images/our-work/commercial/COM4.jpeg';
+import com5 from '../assets/images/our-work/commercial/COM5.jpeg';
+import com6 from '../assets/images/our-work/commercial/COM6.jpeg';
+
+// GROUNDWORKS
+import gw1 from '../assets/images/our-work/groundworks/GW1.jpeg';
+import gw2 from '../assets/images/our-work/groundworks/GW2.jpeg';
+import gw3 from '../assets/images/our-work/groundworks/GW3.jpeg';
+import gw4 from '../assets/images/our-work/groundworks/GW4.jpeg';
+import gw5 from '../assets/images/our-work/groundworks/GW5.jpeg';
+import gw6 from '../assets/images/our-work/groundworks/GW6.jpeg';
+
+// STRUCTURAL
+import str2 from '../assets/images/our-work/structural/STR2.jpeg';
+import str3 from '../assets/images/our-work/structural/STR3.jpeg';
+import str4 from '../assets/images/our-work/structural/STR4.jpeg';
+import str5 from '../assets/images/our-work/structural/STR5.jpeg';
+import str6 from '../assets/images/our-work/structural/STR6.jpeg';
+import str1 from '../assets/images/our-work/structural/STR7.jpeg';
+---
+
+<MainLayout>
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <h1>Our Work</h1>
+    <p class="quote">
+      'Apparently, stealing pics is commonplace these days,<br>
+      don't worry everything you see here is our work.'
+    </p>
+  </div>
+
+  <!-- PAIRED CATEGORIES -->
+  <div class="categories-wrapper">
+    <div class="pair">
+      <WorkCategory title="CARPENTRY" description="Precision first and second-fix carpentry for luxury new builds, refurbishments and alterations in Cornwall. We deliver exceptional craftsmanship at speed with a flawless premium finish trusted by main contractors and high-end clients." images={[car1.src, car2.src, car3.src, car4.src, car5.src, car6.src]} />
+      <WorkCategory title="JOINERY" description="Bespoke joinery, staircases and cabinetry for luxury new builds, refurbishments and alterations across the South West. We deliver outstanding detail and finish, without compromising on deadlines and budget. Ideal for architects and clients seeking a polished high-end result." images={[j1.src, j2.src, j3.src, j4.src, j5.src, j6.src]} />
+    </div>
+
+    <div class="pair">
+      <WorkCategory title="HERITAGE" description="Specialists in listed building renovations, heritage restorations, sympathetic extensions and alterations across Cornwall. Foxton Group delivers high-quality, sensitive work on time and to the highest standard for architects and luxury housing developers." images={[her1.src, her2.src, her3.src, her4.src, her5.src, her6.src]} />
+      <WorkCategory title="COMMERCIAL" description="Professional commercial construction, refurbishments and fit-outs for retail and hospitality across the South West. Foxton Group delivers high-quality results on time and within budget trusted by main contractors and developers for premium spaces." images={[com1.src, com2.src, com3.src, com4.src, com5.src, com6.src]} />
+    </div>
+
+    <div class="pair">
+      <WorkCategory title="GROUNDWORKS" description="Expert groundworks for high-end new builds, refurbishments and alterations across Cornwall. Foxton Group delivers precise, stable foundations on budget and ahead of schedule giving luxury developers and architects complete confidence in every project." images={[gw1.src, gw2.src, gw3.src, gw4.src, gw5.src, gw6.src]} />
+      <WorkCategory title="STRUCTURAL" description="Reliable structural contracting for high-end new builds, refurbishments, extensions and alterations in Cornwall. We ensure strength, speed and premium quality with steelwork and reinforcements for main contractors and developers." images={[str2.src, str3.src, str4.src, str5.src, str6.src, str1.src]} />
+    </div>
+  </div>
+
+  <!-- Dedicated Lightbox Component -->
+  <Lightbox 
+    categoryImages={{
+      "CARPENTRY": [car1.src, car2.src, car3.src, car4.src, car5.src, car6.src],
+      "JOINERY": [j1.src, j2.src, j3.src, j4.src, j5.src, j6.src],
+      "HERITAGE": [her1.src, her2.src, her3.src, her4.src, her5.src, her6.src],
+      "COMMERCIAL": [com1.src, com2.src, com3.src, com4.src, com5.src, com6.src],
+      "GROUNDWORKS": [gw1.src, gw2.src, gw3.src, gw4.src, gw5.src, gw6.src],
+      "STRUCTURAL": [str2.src, str3.src, str4.src, str5.src, str6.src, str1.src]
+    }} 
+  />
+
+  <style>
+/* ===================== OUR WORK PAGE ===================== */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  background: #fff;
+}
+
+.hero h1 {
+  font-size: clamp(2.75rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 600;
+  color: #0A3D2F;
+  margin-bottom: 1.25rem;
+}
+
+.quote {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-style: italic;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Categories */
+.categories-wrapper {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pair {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 4.5rem;
+}
+
+/* Mobile - stack the two categories vertically */
+@media (max-width: 1024px) {
+  .pair {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .hero {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+}
+
+/* Wider container on massive screens (matches heritage page) */
+@media (min-width: 1800px) {
+  .categories-wrapper {
+    max-width: 1600px;
+  }
+}
+</style>
+</MainLayout>
+
+<style>
+.hero { text-align: center; padding: 2rem 0 2.25rem; }
+.hero h1 { font-size: clamp(2.75rem, 5vw, 3.625rem); line-height: 1.1; font-weight: 600; color: #0A3D2F; margin-bottom: 1.25rem; text-align: center; }
+.quote { font-size: clamp(1.1rem, 2vw, 1.25rem); font-style: italic; max-width: 51.25rem; margin: 0 auto; line-height: 1.4; color: #333; }
+
+.categories-wrapper { max-width: none; margin: 0 auto; padding: 0 1.25rem; width: 100%; box-sizing: border-box; }
+.pair { display: flex; gap: 2.5rem; margin-bottom: 4rem; }
+/* Mobile - stack the two categories vertically */
+@media (max-width: 1024px) {
+  .pair {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+</style>
